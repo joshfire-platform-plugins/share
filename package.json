@@ -1,0 +1,58 @@
+{
+  "name": "share",
+  "fullName": "Share",
+  "version": "0.0.1",
+  "keywords": [
+    "share",
+    "sharekit"
+  ],
+  "description": "Share via Mail, Facebook, Twitter",
+  "joshfire": {
+    "devices": [
+      "phone-ios",
+      "tablet-ios"
+    ],
+    "hooks": [
+      "injectCordovaPluginJS",
+      "xcodeproj"
+    ],
+    "options": {
+      "schema": {
+        "app-url": {
+          "type": "string",
+          "title": "Application URL"
+        },
+        "fb-app-key": {
+          "type": "string",
+          "title": "Facebook app key"
+        },
+        "twitter-consumer-key": {
+          "type": "string",
+          "title": "Twitter consumer key"
+        },
+        "twitter-secret": {
+          "type": "string",
+          "title": "Twitter secret"
+        }
+      },
+      "form": [
+        "app-url",
+        {
+          "type": "fieldset",
+          "title": "Facebook",
+          "items": [
+            "fb-app-key"
+          ]
+        },
+        {
+          "type": "fieldset",
+          "title": "Twitter",
+          "items": [
+            "twitter-consumer-key",
+            "twitter-secret"
+          ]
+        }
+      ]
+    }
+  }
+}

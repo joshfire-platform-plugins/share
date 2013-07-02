@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com.phonegap.plugins.ShareKitPlugin"
+    version="1.0.0">
+
+    <name>ShareKitPlugin</name>
+
+    <!-- <asset src="www/ShareKitPlugin.js" target="ShareKitPlugin.js" /> -->
+
+	<engines>
+      <engine name="cordova" version=">=2.0.0" />
+    </engines>
+
+    <!-- ios -->
+    <platform name="ios">
+		<config-file target="config.xml" parent="plugins">
+			<plugin name="ShareKitPlugin" value="ShareKitPlugin" />
+		</config-file>
+
+        <source-file src="src/ShareKitPlugin.m" />
+        <source-file src="src/SHKSharer+Phonegap.m" />
+        <source-file src="src/MySHKConfigurator.m" />
+
+        <header-file src="src/ShareKitPlugin.h" />
+        <header-file src="src/SHKSharer+Phonegap.h" />
+        <header-file src="src/MySHKConfigurator.h" />
+
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Security.framework" />
+        <framework src="MessageUI.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="AVFoundation.framework" />
+        <!-- <framework src="CFNetwork.framework" /> --> <!-- for Flickr -->
+        <!-- <framework src="CoreLocation.framework" /> --> <!-- for Foursquare -->
+        <framework src="Twitter.framework" weak="true" /> <!-- it is new in iOS 5, so if you deploy to older versions of iOS, mark it optional -->
+        <framework src="AdSupport.framework" weak="true" /> <!-- mark as optional, new in ios6 -->
+        <framework src="Accounts.framework" weak="true" /> <!-- mark as optional, new in ios5 -->
+        <framework src="libsqlite3.dylib" weak="true" /> <!-- mark as optional, for Facebook -->
+        <framework src="Social.framework" weak="true" /> <!-- mark as optional, new in ios6 for all services natively supported in iOS (currently Facebook, Twitter, SinaWeibo) -->
+        <!-- <framework src="StoreKit.framework" weak="true" /> --> <!-- mark as optional, new in iOS6, for Evernote -->
+        <!-- <framework src="QuartzCore.framework" /> --> <!-- for Dropbox -->
+    </platform>
+</plugin>
