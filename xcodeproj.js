@@ -109,7 +109,7 @@ define(['woodman'], function (woodman) {
 
       logger.log('updateSharekitConfig replaceMap', replaceMap);
 
-      var configFilePath = 'Plugins/MySHKConfigurator.m';
+      var configFilePath = 'Plugins/com.phonegap.plugins.ShareKitPlugin/MySHKConfigurator.m';
 
       runtime.multipleReplaceInFile(configFilePath, replaceMap, function (err) {
         if (err) {
