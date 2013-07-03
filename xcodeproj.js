@@ -11,7 +11,22 @@ define(['woodman'], function (woodman) {
      * @param {function} cb Callback
      */
     function plugmanInstall(cb) {
-      runtime.plugmanInstall('./Sharekit', function (err) {
+      var err;
+      var options = params.options;
+
+      if (!options) {
+        err = new Error('no options parameters.. can\'t retrieve app key/secrets');
+        logger.warn('plugmanInstall error', err);
+        cb(err);
+      }
+      var fbAppKey = options['fb-app-key'] || 'error';
+
+      var replaceMap = {
+        'FB_APP_ID' : fbAppKey
+      };
+
+      logger.log('plugmanInstall replaceMap', replaceMap);
+      runtime.plugmanInstall('./Sharekit', replaceMap, function (err) {
         if (err) {
           logger.error('plugmanInstall error', err);
         } else {

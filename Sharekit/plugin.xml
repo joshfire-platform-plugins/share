@@ -40,5 +40,21 @@
         <framework src="Social.framework" weak="true" /> <!-- mark as optional, new in ios6 for all services natively supported in iOS (currently Facebook, Twitter, SinaWeibo) -->
         <!-- <framework src="StoreKit.framework" weak="true" /> --> <!-- mark as optional, new in iOS6, for Evernote -->
         <!-- <framework src="QuartzCore.framework" /> --> <!-- for Dropbox -->
+
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+            <array>
+                <dict>
+                    <key>CFBundleTypeRole</key>
+                    <string>Facebook</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>fb[$FB_APP_ID]</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+
+        <preference name="FB_APP_ID" />
+
     </platform>
 </plugin>
