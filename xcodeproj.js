@@ -86,6 +86,12 @@ define(['woodman'], function (woodman) {
         // '#import "PocketAPI.h"'
       ].join('\n');
 
+      var onLaunch = [
+        '// Sharekit',
+        indent + 'DefaultSHKConfigurator *configurator = [[[MySHKConfigurator alloc] init] autorelease];',
+        indent + '[SHKConfiguration sharedInstanceWithConfigurator:configurator];'
+      ].join('\n');
+
       // src code file to inject in src
       var srcToInjectPath = 'share/ios/src/AppDelegate.m';
       runtime.readFileFromAddon(srcToInjectPath, function (err, src) {
@@ -96,6 +102,7 @@ define(['woodman'], function (woodman) {
 
         var replaceMap = {
           '\\/\\*\\*___JOSHFIRE_IMPORT_PLACEHOLDER___\\*\\*\\/': imports,
+          '\\/\\*\\*___JOSHFIRE_LAUNCH_PLACEHOLDER___\\*\\*\\/': onLaunch,
           '\\/\\*\\*___JOSHFIRE_SRC_PLACEHOLDER___\\*\\*\\/'   : src
         };
 
