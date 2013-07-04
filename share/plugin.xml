@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    id="com.phonegap.plugins.ShareKitPlugin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.joshfire.phonegap.plugins.SharePlugin"
     version="1.0.0">
 
     <name>SharePlugin</name>
@@ -56,5 +57,15 @@
 
         <preference name="FB_APP_ID" />
 
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="plugins">
+            <plugin name="ShareKitPlugin" value="com.joshfire.phonegap.plugins.share.ShareKitPlugin" />
+        </config-file>
+
+        <source-file src="android/src/ShareKitPlugin.java"
+                target-dir="src/com/joshfire/phonegap/plugins/share" />
     </platform>
 </plugin>

@@ -14,7 +14,8 @@
     ],
     "hooks": [
       "injectCordovaPluginJS",
-      "xcodeproj"
+      "xcodeproj",
+      "androidproj"
     ],
     "options": {
       "schema": {
