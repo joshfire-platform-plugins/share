@@ -3,9 +3,9 @@
     id="com.phonegap.plugins.ShareKitPlugin"
     version="1.0.0">
 
-    <name>ShareKitPlugin</name>
+    <name>SharePlugin</name>
 
-    <!-- <asset src="www/ShareKitPlugin.js" target="ShareKitPlugin.js" /> -->
+    <asset src="www/ShareKitPlugin.js" target="ShareKitPlugin.js" />
 
 	<engines>
       <engine name="cordova" version=">=2.0.0" />
@@ -17,13 +17,13 @@
 			<plugin name="ShareKitPlugin" value="ShareKitPlugin" />
 		</config-file>
 
-        <source-file src="src/ShareKitPlugin.m" />
-        <source-file src="src/SHKSharer+Phonegap.m" />
-        <source-file src="src/MySHKConfigurator.m" />
+        <source-file src="ios/src/ShareKitPlugin.m" />
+        <source-file src="ios/src/SHKSharer+Phonegap.m" />
+        <source-file src="ios/src/MySHKConfigurator.m" />
 
-        <header-file src="src/ShareKitPlugin.h" />
-        <header-file src="src/SHKSharer+Phonegap.h" />
-        <header-file src="src/MySHKConfigurator.h" />
+        <header-file src="ios/src/ShareKitPlugin.h" />
+        <header-file src="ios/src/SHKSharer+Phonegap.h" />
+        <header-file src="ios/src/MySHKConfigurator.h" />
 
         <framework src="SystemConfiguration.framework" />
         <framework src="Security.framework" />

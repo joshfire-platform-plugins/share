@@ -3,7 +3,7 @@ define(['woodman'], function (woodman) {
     var logger = woodman.getLogger('add-on share injectCordovaPluginJS');
     logger.log('started');
 
-    var jsFilePath = './Sharekit/www/ShareKitPlugin.js';
+    var jsFilePath = './share/www/ShareKitPlugin.js';
 
     /**
      * wrap JS file in IIFE and append it to cordova in bootstrap

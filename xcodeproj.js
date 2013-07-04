@@ -26,7 +26,7 @@ define(['woodman'], function (woodman) {
       };
 
       logger.log('plugmanInstall replaceMap', replaceMap);
-      runtime.plugmanInstall('./Sharekit', replaceMap, function (err) {
+      runtime.plugmanInstall('./share', replaceMap, function (err) {
         if (err) {
           logger.error('plugmanInstall error', err);
         } else {
@@ -45,7 +45,7 @@ define(['woodman'], function (woodman) {
      * @param {function} cb Callback
      */
     function copyLibraryToProject(cb) {
-      var iOSLibrary = './Sharekit/lib';
+      var iOSLibrary = './share/ios/lib';
       var libDest = 'Sharekit';
 
       runtime.copyFromAddon(iOSLibrary, libDest, function (err) {
@@ -87,7 +87,7 @@ define(['woodman'], function (woodman) {
       ].join('\n');
 
       // src code file to inject in src
-      var srcToInjectPath = 'Sharekit/src/AppDelegate.m';
+      var srcToInjectPath = 'share/ios/src/AppDelegate.m';
       runtime.readFileFromAddon(srcToInjectPath, function (err, src) {
         if (err) {
           logger.warn('injectInApplicationSrc readFileFromAddon error', err);
