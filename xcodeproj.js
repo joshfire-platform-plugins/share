@@ -5,40 +5,6 @@ define(['woodman'], function (woodman) {
     logger.log('started');
 
     /**
-     * Invoke plugman.install on the xcode project
-     *
-     * @function
-     * @param {function} cb Callback
-     */
-    function plugmanInstall(cb) {
-      var err;
-      var options = params.options;
-
-      if (!options) {
-        err = new Error('no options parameters.. can\'t retrieve app key/secrets');
-        logger.warn('plugmanInstall error', err);
-        cb(err);
-      }
-      var fbAppKey = options['fb-app-key'] || 'error';
-
-      var replaceMap = {
-        'FB_APP_ID' : fbAppKey
-      };
-
-      logger.log('plugmanInstall replaceMap', replaceMap);
-      runtime.plugmanInstall('./share', replaceMap, function (err) {
-        if (err) {
-          logger.error('plugmanInstall error', err);
-        } else {
-          logger.log('we DONE');
-        }
-
-        cb(err);
-      });
-    }
-
-
-    /**
      * Copy the Sharekit library to the xcode projects' directory
      *
      * @function
@@ -195,7 +161,6 @@ define(['woodman'], function (woodman) {
      * is better for simplicity
      */
     runtime.async.series([
-      plugmanInstall,
       copyLibraryToProject,
       customSharekitInstall,
       injectInApplicationSrc,

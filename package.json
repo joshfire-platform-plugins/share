@@ -1,7 +1,7 @@
 {
   "name": "share",
   "fullName": "Share",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "keywords": [
     "share",
     "sharekit"
@@ -13,9 +13,8 @@
       "tablet-ios"
     ],
     "hooks": [
-      "injectCordovaPluginJS",
+      "plugman",
       "xcodeproj",
-      "androidproj",
       "share"
     ],
     "options": {
