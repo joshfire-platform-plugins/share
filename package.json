@@ -1,7 +1,7 @@
 {
   "name": "share",
   "fullName": "Share",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "share",
     "sharekit"
@@ -10,7 +10,9 @@
   "joshfire": {
     "devices": [
       "phone-ios",
-      "tablet-ios"
+      "phone-android",
+      "tablet-ios",
+      "tablet-android"
     ],
     "hooks": [
       "plugman",
