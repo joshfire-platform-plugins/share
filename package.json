@@ -1,7 +1,7 @@
 {
   "name": "share",
   "fullName": "Share",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "share",
     "sharekit"
@@ -27,35 +27,10 @@
         },
         "fb-app-key": {
           "type": "string",
-          "title": "Facebook app key"
-        },
-        "twitter-consumer-key": {
-          "type": "string",
-          "title": "Twitter consumer key"
-        },
-        "twitter-secret": {
-          "type": "string",
-          "title": "Twitter secret"
+          "title": "Facebook app key",
+          "description": "only used for iOS5 deploys. if your deploy target is iOS, Facebook Share is handled by the native Facebook iOS account integration."
         }
-      },
-      "form": [
-        "app-url",
-        {
-          "type": "fieldset",
-          "title": "Facebook",
-          "items": [
-            "fb-app-key"
-          ]
-        },
-        {
-          "type": "fieldset",
-          "title": "Twitter",
-          "items": [
-            "twitter-consumer-key",
-            "twitter-secret"
-          ]
-        }
-      ]
+      }
     }
   }
 }
