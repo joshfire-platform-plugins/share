@@ -19,7 +19,7 @@ define(['woodman'], function (woodman) {
         cb(err);
       }
 
-      var fbAppKey = options['fb-app-key'];
+      var fbAppKey = options['fb-app-key'] || 'undefined';
       var replaceMap = {
         'FB_APP_ID' : fbAppKey
       };
