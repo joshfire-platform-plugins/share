@@ -6,7 +6,7 @@
     "share",
     "sharekit"
   ],
-  "description": "Share via Mail, Facebook, Twitter",
+  "description": "Share via Mail, Facebook, Twitter on iOS<br>Share via all share-intent enabled apps on Android",
   "joshfire": {
     "devices": [
       "phone-ios",
@@ -21,16 +21,25 @@
     ],
     "options": {
       "schema": {
-        "app-url": {
+        "fb-app-url": {
           "type": "string",
-          "title": "Application URL"
+          "title": "Facebook app URL",
+          "joshfire:definedFor": ["phone-ios", "tablet-ios"]
         },
         "fb-app-key": {
           "type": "string",
           "title": "Facebook app key",
-          "description": "only used for iOS5 deploys. if your deploy target is iOS, Facebook Share is handled by the native Facebook iOS account integration."
+          "joshfire:definedFor": ["phone-ios", "tablet-ios"]
         }
-      }
+      },
+      "form": [
+        {
+          "type": "help",
+          "helpvalue": "These fields are <em>only</em> required for <strong>iOS5</strong> deploys<br>You need to <a href=\"https://developers.facebook.com/apps\">create a facebook app</a> using the same bundle id as the one you will use when deploying this app.<br>The two field below correspond to the URL you will have to pick when creating your app and the key which will be generated once the app is created"
+        },
+        "fb-app-key",
+        "fb-app-url"
+      ]
     }
   }
 }
