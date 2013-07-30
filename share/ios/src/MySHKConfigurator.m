@@ -22,14 +22,6 @@
 	return @"___JOSHFIRE_FACEBOOK_APP_ID___";
 }
 
-- (NSString*)twitterConsumerKey {
-	return @"___JOSHFIRE_TWITTER_CONSUMER_KEY___";
-}
-
-- (NSString*)twitterSecret {
-	return @"___JOSHFIRE_TWITTER_SECRET___";
-}
-
 /*
  Favorite Sharers
  ----------------

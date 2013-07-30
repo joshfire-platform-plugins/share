@@ -128,15 +128,11 @@ define(['woodman'], function (woodman) {
 
       var appURL        = options['app-url'];
       var fbAppKey      = options['fb-app-key'];
-      var twitterKey    = options['twitter-consumer-key'];
-      var twitterSecret = options['twitter-secret'];
 
       var replaceMap = {
         '___JOSHFIRE_APP_NAME___'             : params.projectname,
         '___JOSHFIRE_APP_URL___'              : appURL,
-        '___JOSHFIRE_FACEBOOK_APP_ID___'      : fbAppKey,
-        '___JOSHFIRE_TWITTER_CONSUMER_KEY___' : twitterKey,
-        '___JOSHFIRE_TWITTER_SECRET___'       : twitterSecret
+        '___JOSHFIRE_FACEBOOK_APP_ID___'      : fbAppKey
       };
 
       logger.log('updateSharekitConfig replaceMap', replaceMap);
