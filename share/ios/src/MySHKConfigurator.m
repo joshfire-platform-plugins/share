@@ -27,14 +27,37 @@
  ----------------
  These values are used to define the default favorite sharers appearing on ShareKit's action sheet.
  */
+- (NSArray*)defaultSharers {
+    // if iOS 6 or greater show all three: FB, Twitter, Mail
+    // if lower
+    //    if fbAppId is set, show all three
+    //    if not, only show Twitter & Mail
+    NSString *reqSysVer = @"6.0";
+    NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
+    BOOL iOS6OrGreater = ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending);
+    BOOL fbAppIdUndefined = [self.facebookAppId isEqualToString:@"undefined"];
+
+    NSArray* fbTwitterMail = [NSArray arrayWithObjects:@"SHKFacebook", @"SHKTwitter", @"SHKMail", nil];
+
+    if (iOS6OrGreater) {
+        return fbTwitterMail;
+    } else {
+        if (fbAppIdUndefined) {
+            return [NSArray arrayWithObjects:@"SHKTwitter", @"SHKMail", nil];
+        } else {
+            return fbTwitterMail;
+        }
+    }
+}
+
 - (NSArray*)defaultFavoriteURLSharers {
-    return [NSArray arrayWithObjects:@"SHKFacebook", @"SHKTwitter", @"SHKMail", nil];
+    return [self defaultSharers];
 }
 - (NSArray*)defaultFavoriteImageSharers {
-    return [NSArray arrayWithObjects:@"SHKFacebook", @"SHKTwitter", @"SHKMail", nil];
+    return [self defaultSharers];
 }
 - (NSArray*)defaultFavoriteTextSharers {
-    return [NSArray arrayWithObjects:@"SHKFacebook", @"SHKTwitter", @"SHKMail", nil];
+    return [self defaultSharers];
 }
 
 // SHKActionSheet settings
