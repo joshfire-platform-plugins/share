@@ -126,12 +126,12 @@ define(['woodman'], function (woodman) {
         cb(err);
       }
 
-      var appURL        = options['app-url'];
-      var fbAppKey      = options['fb-app-key'];
+      var fbAppURL = options['fb-app-url'] || 'http://www.joshfire.com';
+      var fbAppKey = options['fb-app-key'];
 
       var replaceMap = {
         '___JOSHFIRE_APP_NAME___'             : params.projectname,
-        '___JOSHFIRE_APP_URL___'              : appURL,
+        '___JOSHFIRE_APP_URL___'              : fbAppURL,
         '___JOSHFIRE_FACEBOOK_APP_ID___'      : fbAppKey
       };
 
